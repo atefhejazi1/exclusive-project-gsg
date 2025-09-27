@@ -1,7 +1,12 @@
-import React from "react";
+import PromoBanner from "../components/PromoBanner";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <PromoBanner />
+      
+    </div>
+  );
 };
 
 export default Home;
