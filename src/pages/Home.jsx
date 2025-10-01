@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Copyright from "../components/Copyright";
 import Categories from "../components/Categories";
 import NewArrival from "../components/NewArrival";
+import HeroBanner from "../components/HeroBanner";
 
 const Home = () => {
   return (
@@ -23,6 +24,8 @@ const Home = () => {
         heading="Best Selling Products"
         isBestSelling={true}
       />
+
+      <HeroBanner />
 
       <Products
         slug="Our Products"

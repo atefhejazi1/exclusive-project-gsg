@@ -26,7 +26,7 @@ const Index = () => {
             alt="Left Section"
             className="w-full h-full object-cover rounded-lg"
           />
-          <div className="absolute bottom-4 left-4 text-white bg-black bg-opacity-70 p-4 rounded-lg max-w-xs sm:max-w-sm">
+          <div className="absolute bottom-4 left-4 text-white  bg-opacity-70 p-4 rounded-lg max-w-xs sm:max-w-sm">
             <h2 className="text-xl sm:text-2xl font-bold mb-2">Title Left</h2>
             <p className="text-sm sm:text-base">
               Black and White version of the PS5 coming out on sale.
@@ -34,7 +34,7 @@ const Index = () => {
             <p className="mb-4 text-sm sm:text-base">
               Description goes here for the left section.
             </p>
-            <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+            <button className="underline text-white px-4 py-2 rounded  transition">
               Shop Now
             </button>
           </div>
@@ -51,7 +51,7 @@ const Index = () => {
                 Black and White version of the PS5 coming out on sale.
               </p>
               <p className="mb-4 text-sm sm:text-base">Big description text goes here.</p>
-              <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+              <button className="underline text-white px-4 py-2 rounded  transition">
                 Shop Now
               </button>
             </div>
@@ -73,12 +73,12 @@ const Index = () => {
                 alt="Small 1"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-2 left-2 text-white bg-black bg-opacity-70 p-3 rounded-lg max-w-xs sm:max-w-sm">
+              <div className="absolute bottom-2 left-2 text-white  bg-opacity-70 p-3 rounded-lg max-w-xs sm:max-w-sm">
                 <h3 className="font-bold text-lg mb-1">Small 1</h3>
                 <p className="text-sm mb-2">
                   Black and White version of the PS5 coming out on sale.
                 </p>
-                <button className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">
+                <button className="underline text-white px-3 py-1 rounded  transition">
                   Shop Now
                 </button>
               </div>
@@ -91,12 +91,12 @@ const Index = () => {
                 alt="Small 2"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-2 left-2 text-white bg-black bg-opacity-70 p-3 rounded-lg max-w-xs sm:max-w-sm">
+              <div className="absolute bottom-2 left-2 text-white  bg-opacity-70 p-3 rounded-lg max-w-xs sm:max-w-sm">
                 <h3 className="font-bold text-lg mb-1">Small 2</h3>
                 <p className="text-sm mb-2">
                   Black and White version of the PS5 coming out on sale.
                 </p>
-                <button className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">
+                <button className="underline text-white px-3 py-1 rounded  transition">
                   Shop Now
                 </button>
               </div>
