@@ -1,6 +1,6 @@
 import React from "react";
 
-const Product = ({product , isFlashSales}) => {
+const Product = ({ product }) => {
   return (
     <div className="flex flex-col">
       <div className="relative flex justify-center items-center h-64 bg-[#f5f5f5] rounded-lg group overflow-hidden">
@@ -14,9 +14,9 @@ const Product = ({product , isFlashSales}) => {
             <div className="p-1 rounded bg-green-400 text-white">New</div>
           )}
 
-          {isFlashSales && product.flash && (
-            <div className="p-1 rounded bg-red-700 text-white">
-              {product.flash}
+          {product.flash && (
+            <div className="py-1 px-3 rounded bg-red-700 text-white">
+              {product.flash}%
             </div>
           )}
         </div>

@@ -8,6 +8,8 @@ import Copyright from "../components/Copyright";
 import Categories from "../components/Categories";
 import NewArrival from "../components/NewArrival";
 import HeroBanner from "../components/HeroBanner";
+import FlashSales from "../components/Products/FlashSales";
+import BestSelling from "../components/Products/BestSelling";
 
 const Home = () => {
   return (
@@ -15,23 +17,15 @@ const Home = () => {
       <PromoBanner />
       <Navbar />
       <HeroSection />
-      <Products slug="Today’s" heading="Flash Sales" isFlashSales={true} />
+      {/* <Products slug="Today’s" heading="Flash Sales" isFlashSales={true} /> */}
+      <FlashSales />
 
       <Categories />
 
-      <Products
-        slug="This Month"
-        heading="Best Selling Products"
-        isBestSelling={true}
-      />
-
+      <BestSelling />
       <HeroBanner />
 
-      <Products
-        slug="Our Products"
-        heading="Explore Our Products"
-        isBestSelling={false}
-      />
+      <Products />
 
       <NewArrival />
       <Features />

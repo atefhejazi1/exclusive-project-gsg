@@ -3,7 +3,7 @@ import Slide1Img1 from "../../assets/Slide1Img1.png";
 
 const Index = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+    <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
       {/* Section Header */}
       <div className="flex flex-col mb-8">
         <div className="flex items-center">

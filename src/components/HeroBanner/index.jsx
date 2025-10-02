@@ -15,20 +15,20 @@ const Index = () => {
 
           {/* العد التنازلي */}
           <div className="flex gap-4 mt-4 flex-wrap">
-            <div className="flex flex-col w-[80px] h-[80px] items-center justify-center bg-white rounded-full ">
-              <h3 className="text-lg font-bold">23</h3>
+            <div className="flex flex-col w-[66px] h-[66px]  md:w-[80px] md:h-[80px] items-center justify-center bg-white rounded-full ">
+              <h3 className="text-md md:text-lg font-bold">23</h3>
               <h4 className="text-sm text-gray-400">Hours</h4>
             </div>
-            <div className="flex flex-col w-[80px] h-[80px] items-center justify-center bg-white rounded-full ">
-              <h3 className="text-lg font-bold">05</h3>
+            <div className="flex flex-col w-[66px] h-[66px]  md:w-[80px] md:h-[80px] items-center justify-center bg-white rounded-full ">
+              <h3 className="text-md md:text-lg font-bold">05</h3>
               <h4 className="text-sm text-gray-400">Days</h4>
             </div>
-            <div className="flex flex-col w-[80px] h-[80px] items-center justify-center bg-white rounded-full ">
-              <h3 className="text-lg font-bold">59</h3>
+            <div className="flex flex-col w-[66px] h-[66px]  md:w-[80px] md:h-[80px] items-center justify-center bg-white rounded-full ">
+              <h3 className="text-md md:text-lg font-bold">59</h3>
               <h4 className="text-sm text-gray-400">Minutes</h4>
             </div>
-            <div className="flex flex-col w-[80px] h-[80px] items-center justify-center bg-white rounded-full ">
-              <h3 className="text-lg font-bold">35</h3>
+            <div className="flex flex-col w-[66px] h-[66px]  md:w-[80px] md:h-[80px] items-center justify-center bg-white rounded-full ">
+              <h3 className="text-md md:text-lg font-bold">35</h3>
               <h4 className="text-sm text-gray-400">Seconds</h4>
             </div>
           </div>
