@@ -4,10 +4,12 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Copyright from "../../components/Copyright";
 import { useParams } from "react-router";
+import Product from "./Product";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, SetProduct] = useState(null);
+  const [relatedProducts, SetRelatedProducts] = useState([]);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -15,22 +17,24 @@ const ProductDetails = () => {
       .then((data) => SetProduct(data));
   }, [id]);
 
-  if (!product) return <p className="text-center py-10">Loading...</p>;
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => SetRelatedProducts(data));
+  }, []);
 
+  if (!product) return <p className="text-center py-10">Loading...</p>;
   return (
     <>
       <PromoBanner />
       <Navbar />
 
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
-        {/* breadcrumb */}
         <div className="text-gray-500 text-sm mb-6">
           Account / Gaming / <span className="text-black">{product.title}</span>
         </div>
 
-        {/* main section */}
         <div className="flex flex-col lg:flex-row gap-10 mt-24">
-          {/* left: thumbnails */}
           <div className="flex lg:flex-col gap-4 justify-center items-center lg:items-start">
             {[...Array(4)].map((_, i) => (
               <div
@@ -46,7 +50,6 @@ const ProductDetails = () => {
             ))}
           </div>
 
-          {/* middle: main image */}
           <div className="flex-1 flex justify-center">
             <div className="bg-gray-200  shadow-md p-6 flex justify-center">
               <img
@@ -57,11 +60,9 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          {/* right: details */}
           <div className="flex-1 space-y-4">
             <h2 className="text-2xl font-semibold">{product.title}</h2>
 
-            {/* rating */}
             <div className="flex items-center space-x-3">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
@@ -93,7 +94,6 @@ const ProductDetails = () => {
               {product.description}
             </p>
 
-            {/* colors */}
             <div className="flex items-center gap-3">
               <h4 className="font-medium">Colors:</h4>
               <div className="flex gap-2">
@@ -102,7 +102,6 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            {/* sizes */}
             <div className="flex items-center gap-3 flex-wrap">
               <h4 className="font-medium">Size:</h4>
               <div className="flex gap-2">
@@ -117,7 +116,6 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            {/* quantity & buttons */}
             <div className="flex items-center flex-wrap gap-4">
               <div className="flex border border-gray-500">
                 <button className="px-3 py-1">-</button>
@@ -148,8 +146,7 @@ const ProductDetails = () => {
               </button>
             </div>
 
-            {/* delivery info */}
-            <div className="border rounded-lg divide-y mt-6">
+            <div className="border  border-gray-400 rounded-lg divide-y mt-6">
               <div className="flex items-center gap-4 p-4">
                 <svg
                   width="40"
@@ -195,7 +192,7 @@ const ProductDetails = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4">
+              <div className="flex  items-center gap-4 p-4">
                 <svg
                   width="40"
                   height="40"
@@ -234,6 +231,23 @@ const ProductDetails = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="mb-20">
+        <div className="flex flex-col mb-5 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 gap-6 pt-20 pb-5 ">
+          <div className="flex items-center">
+            <div className="w-5 h-10 bg-red-700"></div>
+            <h3 className="ml-5 text-red-700 text-lg font-semibold">
+              Related Item
+            </h3>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 gap-6">
+          {relatedProducts.slice(0, 4).map((product) => (
+            <Product product={product} key={product.index} />
+          ))}
         </div>
       </div>
 
