@@ -49,12 +49,16 @@ const Index = () => {
               About
             </Link>
 
-            <a
-              href="#"
-              className="text-gray-900 font-medium hover:text-gray-900 border-b-2 border-transparent"
+            <Link
+              to="/signup"
+              className={`text-gray-900 font-medium hover:text-gray-900 border-b-2 ${
+                location.pathname === "/signup"
+                  ? "border-gray-900"
+                  : "border-transparent"
+              }`}
             >
               Sign Up
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -190,18 +194,24 @@ const Index = () => {
 
       {isOpen && (
         <div className="lg:hidden px-2 pt-2 pb-3 space-y-1 bg-white shadow-md">
-          <a href="#" className="block text-gray-700 hover:text-gray-900">
+          <Link to="/" className="block text-gray-700 hover:text-gray-900">
             Home
-          </a>
-          <a href="#" className="block text-gray-700 hover:text-gray-900">
-            About
-          </a>
-          <a href="#" className="block text-gray-700 hover:text-gray-900">
-            Services
-          </a>
-          <a href="#" className="block text-gray-700 hover:text-gray-900">
+          </Link>
+          <Link
+            to="/contact"
+            className="block text-gray-700 hover:text-gray-900"
+          >
             Contact
-          </a>
+          </Link>
+          <Link to="/about" className="block text-gray-700 hover:text-gray-900">
+            About
+          </Link>
+          <Link
+            to="/signup"
+            className="block text-gray-700 hover:text-gray-900"
+          >
+            Sign Up
+          </Link>
         </div>
       )}
     </nav>
