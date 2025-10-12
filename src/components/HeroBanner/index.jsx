@@ -13,7 +13,6 @@ const Index = () => {
             Enhance Your Music Experience
           </h2>
 
-          {/* العد التنازلي */}
           <div className="flex gap-4 mt-4 flex-wrap">
             <div className="flex flex-col w-[66px] h-[66px]  md:w-[80px] md:h-[80px] items-center justify-center bg-white rounded-full ">
               <h3 className="text-md md:text-lg font-bold">23</h3>
@@ -34,7 +33,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* القسم الأيمن */}
         <div className="md:w-1/2 flex justify-center items-center p-6">
           <img
             src={HeadPhone}

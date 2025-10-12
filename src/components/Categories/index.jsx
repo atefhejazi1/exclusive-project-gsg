@@ -51,7 +51,6 @@ const Index = () => {
     transition group 
     ${category.title === "Camera" ? "bg-red-500" : "hover:bg-red-500"}`}
           >
-            {/* المحتوى */}
 
             <img
               src={category.icon}

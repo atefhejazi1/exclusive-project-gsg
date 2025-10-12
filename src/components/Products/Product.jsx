@@ -70,13 +70,15 @@ const Product = ({ product }) => {
         </div>
       </div>
 
-      <h2 className="text-lg font-semibold mt-4">{product.title}</h2>
+      <h2 className="text-lg font-semibold mt-4" title={product.title}>
+        {product.title.length > 30
+          ? product.title.slice(0, 30) + "..."
+          : product.title}
+      </h2>
 
       <div className="flex items-center gap-3 mt-2">
-        <span className="text-red-500 line-through">
-          ${product.originalPrice}
-        </span>
-        <span className="text-gray-500">${product.discountPrice}</span>
+        <span className="text-red-500 line-through">${product.price}</span>
+        {/* <span className="text-gray-500">${product.discountPrice}</span> */}
       </div>
 
       <div className="flex mt-3">

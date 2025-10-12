@@ -4,7 +4,7 @@ import { slides } from "./Slides";
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [openIndex, setOpenIndex] = useState(null); // للتحكم في فتح/إغلاق الـ sub categories
+  const [openIndex, setOpenIndex] = useState(null); 
 
   const goToSlide = (index) => {
     setCurrentSlide(index);

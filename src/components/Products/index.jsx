@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { products } from "./ProductsData";
 import Product from "./Product";
 
@@ -23,6 +23,14 @@ const Index = () => {
     currentIndex,
     currentIndex + itemsPerPage
   );
+
+  const [productsDataData, SetProductsDataData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => SetProductsDataData(data));
+  }, []);
 
   return (
     <div className="">
@@ -87,7 +95,11 @@ const Index = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 gap-6">
-        {currentProducts.map((product) => (
+        {/* {currentProducts.map((product) => (
+          <Product product={product} key={product.index} />
+        ))} */}
+
+        {productsDataData.slice(0, 8).map((product) => (
           <Product product={product} key={product.index} />
         ))}
       </div>
