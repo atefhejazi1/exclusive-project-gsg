@@ -15,13 +15,12 @@ const PageNotFound = () => {
         <p>Your visited page not found. You may go home page.</p>
 
         <div className="flex justify-center items-center mt-20">
-       <Link
-  to="/"
-  className="bg-red-700 text-white py-4 px-20 cursor-pointer rounded-md hover:bg-red-800 transition"
->
-  Back to home page
-</Link>
-
+          <Link
+            to="/"
+            className="bg-red-700 text-white py-4 px-20 cursor-pointer rounded-md hover:bg-red-800 transition"
+          >
+            Back to home page
+          </Link>
         </div>
       </div>
       <Footer />

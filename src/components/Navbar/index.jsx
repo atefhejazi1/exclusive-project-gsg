@@ -28,6 +28,17 @@ const Index = () => {
             </Link>
 
             <Link
+              to="/contact"
+              className={`text-gray-900 font-medium hover:text-gray-900 border-b-2 ${
+                location.pathname === "/contact"
+                  ? "border-gray-900"
+                  : "border-transparent"
+              }`}
+            >
+              Contact
+            </Link>
+
+            <Link
               to="/about"
               className={`text-gray-900 font-medium hover:text-gray-900 border-b-2 ${
                 location.pathname === "/about"
@@ -42,14 +53,7 @@ const Index = () => {
               href="#"
               className="text-gray-900 font-medium hover:text-gray-900 border-b-2 border-transparent"
             >
-              Services
-            </a>
-
-            <a
-              href="#"
-              className="text-gray-900 font-medium hover:text-gray-900 border-b-2 border-transparent"
-            >
-              Contact
+              Sign Up
             </a>
           </div>
 
