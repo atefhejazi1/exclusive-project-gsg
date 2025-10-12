@@ -2,9 +2,9 @@ import { listOfMembers } from "./listOfMembers";
 
 const index = () => {
   return (
-    <div className="flex justify-between max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 gap-4">
+    <div className="flex flex-col md:flex-row justify-between max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 gap-4">
       {listOfMembers.map((member, index) => (
-        <div key={index} className="w-full sm:w-5/12  p-4 ">
+        <div key={index} className="w-full h-1/3 p-4 ">
           <div className="bg-gray-300  h-96  px-4 pt-5 mb-4">
             <img
               src={member.image}
@@ -12,10 +12,8 @@ const index = () => {
               className="w-full h-full "
             />
           </div>
-
           <h2 className="text-xl font-semibold mb-1">{member.name}</h2>
           <h3 className="text-gray-600 mb-3">{member.position}</h3>
-
           <div className="flex  space-x-3">
             <a
               href={member.socialAccounts.twitter}
