@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Logo from "../../assets/Logo.png";
+import { Link, useLocation } from "react-router";
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const location = useLocation();
 
   return (
     <nav className="bg-white border-b-1 border-black/30">
@@ -13,27 +16,38 @@ const Index = () => {
           </div>
 
           <div className="hidden lg:flex space-x-8">
-            <a
-              href="#"
-              className="text-gray-900 font-medium hover:text-gray-900 border-b-2 "
+            <Link
+              to="/"
+              className={`text-gray-900 font-medium hover:text-gray-900 border-b-2 ${
+                location.pathname === "/"
+                  ? "border-gray-900"
+                  : "border-transparent"
+              }`}
             >
               Home
-            </a>
-            <a
-              href="#"
-              className="text-gray-900 font-medium hover:text-gray-900"
+            </Link>
+
+            <Link
+              to="/about"
+              className={`text-gray-900 font-medium hover:text-gray-900 border-b-2 ${
+                location.pathname === "/about"
+                  ? "border-gray-900"
+                  : "border-transparent"
+              }`}
             >
               About
-            </a>
+            </Link>
+
             <a
               href="#"
-              className="text-gray-900 font-medium hover:text-gray-900"
+              className="text-gray-900 font-medium hover:text-gray-900 border-b-2 border-transparent"
             >
               Services
             </a>
+
             <a
               href="#"
-              className="text-gray-900 font-medium hover:text-gray-900"
+              className="text-gray-900 font-medium hover:text-gray-900 border-b-2 border-transparent"
             >
               Contact
             </a>
@@ -117,6 +131,24 @@ const Index = () => {
                   d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
                   stroke="black"
                   stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <button className="hidden sm:block">
+              <svg
+                width="32px"
+                height="32px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                  stroke="#000000"
+                  stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />

@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const Product = ({ product }) => {
   return (
-    <Link to={`/product/${product.id}`}>
+    <Link to={`/products/${product.id}`}>
       <div className="flex flex-col">
         <div className="relative flex justify-center items-center h-64 bg-[#f5f5f5] rounded-lg group overflow-hidden">
           <img
