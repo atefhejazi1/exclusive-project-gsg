@@ -5,11 +5,14 @@ import Footer from "../../components/Footer";
 import Copyright from "../../components/Copyright";
 import { useParams } from "react-router";
 import Product from "./Product";
+import { useProducts } from "../../context/ProductsContext";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, SetProduct] = useState(null);
-  const [relatedProducts, SetRelatedProducts] = useState([]);
+  // const [relatedProducts, SetRelatedProducts] = useState([]);
+
+  const { products, loading, error } = useProducts();
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -17,13 +20,16 @@ const ProductDetails = () => {
       .then((data) => SetProduct(data));
   }, [id]);
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => SetRelatedProducts(data));
-  }, []);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p className="text-red-500">{error}</p>;
 
-  if (!product) return <p className="text-center py-10">Loading...</p>;
+  // useEffect(() => {
+  //   fetch("https://fakestoreapi.com/products")
+  //     .then((response) => response.json())
+  //     .then((data) => SetRelatedProducts(data));
+  // }, []);
+
+  // if (!product) return <p className="text-center py-10">Loading...</p>;
   return (
     <>
       <PromoBanner />
@@ -245,7 +251,7 @@ const ProductDetails = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 gap-6">
-          {relatedProducts.slice(0, 4).map((product) => (
+          {products.slice(0, 4).map((product) => (
             <Product product={product} key={product.index} />
           ))}
         </div>

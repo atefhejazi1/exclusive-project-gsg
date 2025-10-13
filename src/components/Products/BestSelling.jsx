@@ -1,15 +1,23 @@
 import { products } from "./ProductsData";
 import Product from "./Product";
 import { useEffect, useState } from "react";
+import { useProducts } from "../../context/ProductsContext";
 
 const BestSelling = () => {
-  const [productsDataData, SetProductsDataData] = useState([]);
+  // const [productsDataData, SetProductsDataData] = useState([]);
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => SetProductsDataData(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://fakestoreapi.com/products")
+  //     .then((response) => response.json())
+  //     .then((data) => SetProductsDataData(data));
+  // }, []);
+
+  const { products, loading, error } = useProducts();
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p className="text-red-500">{error}</p>;
+
+
 
   return (
     <div className="">
@@ -35,7 +43,7 @@ const BestSelling = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 gap-6">
-        {productsDataData.slice(0, 4).map((product) => (
+        {products.slice(0, 4).map((product) => (
           <Product product={product} key={product.index} />
         ))}
       </div>

@@ -34,7 +34,6 @@ const index = () => {
               items-center
               bg-white
             "
-            // ملاحظة: تم إزالة الـ 'style' الذي يحتوي على minWidth: '280px' لترك Tailwind يتولى الأمر
           >
             <div className="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-gray-300 mb-4">
               <div className="w-16 h-16 flex items-center justify-center rounded-full bg-black">

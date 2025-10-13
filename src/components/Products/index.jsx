@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
-import { products } from "./ProductsData";
+// import { products } from "./ProductsData";
 import Product from "./Product";
+import { useProducts } from "../../context/ProductsContext";
 
 const Index = () => {
+  const { products, loading, error } = useProducts();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p className="text-red-500">{error}</p>;
+
   const filteredProducts = products;
 
   let itemsPerPage = 8;
-
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
     setCurrentIndex((prev) => Math.max(prev - itemsPerPage, 0));
@@ -24,13 +29,8 @@ const Index = () => {
     currentIndex + itemsPerPage
   );
 
-  const [productsDataData, SetProductsDataData] = useState([]);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => SetProductsDataData(data));
-  }, []);
+  // const
+  // );
 
   return (
     <div className="">
@@ -99,7 +99,7 @@ const Index = () => {
           <Product product={product} key={product.index} />
         ))} */}
 
-        {productsDataData.slice(0, 8).map((product) => (
+        {currentProducts.map((product) => (
           <Product product={product} key={product.index} />
         ))}
       </div>

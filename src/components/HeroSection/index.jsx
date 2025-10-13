@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { categories } from "./CategoriesList";
+import { useProducts } from "../../context/ProductsContext";
 
 const Index = () => {
-  const [products, SetProducts] = useState(null);
+  // const [products, SetProducts] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openIndex, setOpenIndex] = useState(null);
+  const { products, loading, error } = useProducts();
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p className="text-red-500">{error}</p>;
 
   const goToSlide = (index) => {
     if (products && index >= 0 && index < products.length) {
@@ -16,14 +21,14 @@ const Index = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => SetProducts(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://fakestoreapi.com/products")
+  //     .then((response) => response.json())
+  //     .then((data) => SetProducts(data));
+  // }, []);
 
   const currentProduct = products ? products[currentSlide] : null;
-  const totalSlides = products ? products.length : 0;
+  // const totalSlides = products ? products.length : 0;
 
   if (!products) {
     return (
@@ -127,7 +132,7 @@ const Index = () => {
             </div>
 
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {products.slice(0 , 6).map((_, index) => (
+              {products.slice(0, 6).map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
