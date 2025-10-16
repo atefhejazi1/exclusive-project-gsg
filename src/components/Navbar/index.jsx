@@ -111,7 +111,7 @@ const Index = () => {
               </svg>
             </button>
 
-            <Link to={"/checkout"} className="relative hidden sm:block">
+            <Link to={"/cart"} className="relative hidden sm:block">
               <svg
                 width="32"
                 height="32"
