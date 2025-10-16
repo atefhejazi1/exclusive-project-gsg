@@ -3,10 +3,8 @@ import { Link } from "react-router";
 import { CartContext } from "../../context/CartContext";
 
 const Product = ({ product }) => {
-const { addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
-  
-  
   return (
     <div className="flex flex-col">
       <div className="relative flex justify-center items-center h-64 bg-[#f5f5f5] rounded-lg group overflow-hidden">
@@ -27,7 +25,10 @@ const { addToCart } = useContext(CartContext);
           )}
         </div>
 
-        <button  onClick={() => addToCart(product)} className="absolute  z-[11] cursor-pointer bottom-0 translate-y-full group-hover:translate-y-0 bg-black w-full text-white py-2 px-4 rounded transition-transform">
+        <button
+          onClick={() => addToCart(product)}
+          className="absolute  z-[11] cursor-pointer bottom-0 translate-y-full group-hover:translate-y-0 bg-black w-full text-white py-2 px-4 rounded transition-transform"
+        >
           Add to Cart
         </button>
 

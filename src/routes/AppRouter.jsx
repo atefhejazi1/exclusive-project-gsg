@@ -7,6 +7,8 @@ import Contact from "../pages/Contact";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import Account from "../pages/Account";
+import Checkout from "../pages/Checkout";
+import Cart from "../pages/Cart";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -16,6 +18,8 @@ const router = createBrowserRouter([
   { path: "/signup", element: <Signup /> },
   { path: "/login", element: <Login /> },
   { path: "/account", element: <Account /> },
+  { path: "/cart", element: <Checkout /> },
+  { path: "/checkout", element: <Cart /> },
 
   { path: "*", element: <PageNotFound /> },
 ]);
