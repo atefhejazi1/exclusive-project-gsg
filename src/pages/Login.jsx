@@ -1,19 +1,18 @@
 import PromoBanner from "../components/PromoBanner";
 import Navbar from "../components/Navbar";
-import SignupComponent from "../components/SignupComponent";
+import LoginComponent from "../components/LoginComponent";
 import Footer from "../components/Footer";
 import Copyright from "../components/Copyright";
-const Signup = () => {
+const Login = () => {
   return (
     <>
       <PromoBanner />
       <Navbar />
-
-      <SignupComponent />
+      <LoginComponent />
       <Footer />
       <Copyright />
     </>
   );
 };
 
-export default Signup;
+export default Login;

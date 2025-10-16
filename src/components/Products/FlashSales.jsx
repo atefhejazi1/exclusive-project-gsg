@@ -1,9 +1,11 @@
-import {  useState } from "react";
+import { useState } from "react";
 // import { products } from "./ProductsData";
 import Product from "./Product";
 import { useProducts } from "../../context/ProductsContext";
 
 const Index = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const { products, loading, error } = useProducts();
 
   if (loading) return <p>Loading...</p>;
@@ -12,8 +14,6 @@ const Index = () => {
   const filteredProducts = products;
 
   let itemsPerPage = 5;
-
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
     setCurrentIndex((prev) => Math.max(prev - itemsPerPage, 0));
@@ -100,7 +100,7 @@ const Index = () => {
 
       <div className="md:overflow-x-hidden ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-20 2xl:ml-44">
         <div className="flex flex-wrap md:flex-nowrap gap-4 sm:gap-6 pl-4 sm:pl-6 lg:pl-8">
-          {products.slice(0, 5).map((product, index) => (
+          {currentProducts.slice(0, 5).map((product, index) => (
             <div
               className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-[22%]"
               key={index}

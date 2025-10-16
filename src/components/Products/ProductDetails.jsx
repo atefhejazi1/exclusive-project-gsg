@@ -22,6 +22,7 @@ const ProductDetails = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p className="text-red-500">{error}</p>;
+  if (!product) return <p className="text-center py-10">Loading...</p>;
 
   // useEffect(() => {
   //   fetch("https://fakestoreapi.com/products")
@@ -29,7 +30,6 @@ const ProductDetails = () => {
   //     .then((data) => SetRelatedProducts(data));
   // }, []);
 
-  // if (!product) return <p className="text-center py-10">Loading...</p>;
   return (
     <>
       <PromoBanner />
