@@ -6,6 +6,7 @@ import PageNotFound from "../pages/PageNotFound";
 import Contact from "../pages/Contact";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
+import Account from "../pages/Account";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   { path: "/about", element: <About /> },
   { path: "/signup", element: <Signup /> },
   { path: "/login", element: <Login /> },
+  { path: "/account", element: <Account /> },
 
   { path: "*", element: <PageNotFound /> },
 ]);
