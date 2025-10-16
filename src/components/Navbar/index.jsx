@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../../assets/Logo.png";
 import { Link, useLocation } from "react-router";
-
+import AccountDropdown from "../AccountDropdown"
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -146,7 +146,7 @@ const Index = () => {
             </button>
 
             <button className="hidden sm:block">
-              <svg
+              {/* <svg
                 width="32px"
                 height="32px"
                 viewBox="0 0 24 24"
@@ -160,7 +160,10 @@ const Index = () => {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
-              </svg>
+              </svg> */}
+
+
+              <AccountDropdown/>
             </button>
 
             <div className="lg:hidden">
