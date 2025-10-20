@@ -11,7 +11,7 @@ const Index = () => {
   const { cartCount } = useContext(CartContext);
 
   return (
-    <nav className="bg-white border-b-1 border-black/30">
+    <nav className="bg-white border-b-1 border-black/30 sticky top-0 z-50">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-between h-16 items-center">
           <div className="flex-shrink-0">
